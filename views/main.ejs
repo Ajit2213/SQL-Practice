@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+</head>
+
+
+<style>
+
+    tr,th,td{
+        border: 2px solid black;
+    }
+   
+</style>
+<body>
+    <h1>ALL data from data base</h1>
+    <h2><a href="http://localhost:8080/main/new">Create New User</a></h2>
+
+  <p>Total Users:<%= values.length %></p>
+
+    <table>
+<tr>
+    <th>id</th>
+    <th>username</th>
+    <th>gmail</th>
+    <th>Edit</th>
+    <th>Remove</th>
+
+</tr>     
+<% for( value of values ) { %>
+    <tr>
+        <td><%= value.id %></td>
+        <td><%= value.username %></td>
+        <td><%= value.password %></td>
+        <td>
+            <form action="/main/<%= value.id %>/edit" method="get">
+                <button>edit username</button>
+            </form>
+        </td>
+
+        <td>
+            <form action="/main/<%= value.id %>/del?_method=Delete" method="post">
+                <button>Delete</button>
+            </form>
+        </td>
+    </tr>
+       <% } %>
+    </table>
+</body>
+</html>

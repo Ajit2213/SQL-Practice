@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit form</title>
+</head>
+<body>
+    <h1>You are edit of this gmail :-<%= value.email %></h1>
+<p>Your Password :<%= value.password %></p>
+    <form action="/main/<%= value.id %>?_method=patch" method="post">
+<textarea name="username" ><%= value.username %></textarea>
+<br>
+<input type="password" name="password" >
+<br>
+<button>edit</button>
+
+    </form>
+</body>
+</html>
